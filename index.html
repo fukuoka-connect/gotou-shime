@@ -631,6 +631,298 @@ ul{list-style:none}
 }
 
 /* ===========================
+   TROUBLE (共感セクション)
+   =========================== */
+.trouble{
+  padding:100px 0;
+  background:var(--white);
+}
+.trouble-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1rem;
+  margin-top:2rem;
+  max-width:640px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.trouble-item{
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  background:var(--gray-100);
+  padding:1.2rem 1.5rem;
+  border-radius:6px;
+  font-size:.92rem;
+  color:var(--gray-700);
+  line-height:1.6;
+  border-left:3px solid var(--gold);
+  transition:all .22s var(--ease);
+}
+.trouble-item:hover{
+  background:var(--gold-light);
+  transition-duration:.48s;
+}
+.trouble-item-icon{
+  font-size:1.3rem;
+  flex-shrink:0;
+}
+.trouble-resolve{
+  text-align:center;
+  margin-top:2.5rem;
+  font-size:1.1rem;
+  font-weight:700;
+  color:var(--teal);
+  line-height:1.8;
+}
+
+/* ===========================
+   FLOW (施術の流れ)
+   =========================== */
+.flow{
+  padding:100px 0;
+  background:var(--teal-light);
+}
+.flow-steps{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:1.5rem;
+  margin-top:2rem;
+  max-width:700px;
+  margin-left:auto;
+  margin-right:auto;
+}
+@media(min-width:768px){
+  .flow-steps{grid-template-columns:repeat(4,1fr);gap:1.2rem;max-width:100%}
+}
+.flow-step{
+  text-align:center;
+  background:var(--white);
+  padding:2rem 1.5rem;
+  border-radius:6px;
+  border:1px solid var(--gray-200);
+  position:relative;
+  transition:all .22s var(--ease);
+}
+.flow-step:hover{
+  transform:translateY(-3px);
+  box-shadow:0 8px 20px rgba(0,0,0,.05);
+  transition-duration:.48s;
+}
+.flow-step-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;height:36px;
+  background:var(--teal);
+  color:var(--white);
+  font-family:var(--font-accent);
+  font-size:.85rem;
+  font-weight:700;
+  border-radius:50%;
+  margin-bottom:1rem;
+}
+.flow-step-title{
+  font-family:var(--font-accent);
+  font-size:1rem;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:.5rem;
+}
+.flow-step-text{
+  font-size:.82rem;
+  color:var(--gray-700);
+  line-height:1.7;
+}
+/* 矢印（PC） */
+@media(min-width:768px){
+  .flow-step:not(:last-child)::after{
+    content:'\203A';
+    position:absolute;
+    right:-1rem;top:50%;
+    transform:translateY(-50%);
+    font-size:1.5rem;
+    color:var(--teal);
+    font-weight:700;
+    z-index:1;
+  }
+}
+
+/* ===========================
+   MID CTA (中間CTA)
+   =========================== */
+.mid-cta{
+  padding:50px 0;
+  background:var(--gold-light);
+  text-align:center;
+}
+.mid-cta-text{
+  font-size:.92rem;
+  color:var(--gray-700);
+  margin-bottom:1.5rem;
+  line-height:1.8;
+}
+.mid-cta-urgency{
+  font-size:.85rem;
+  font-weight:700;
+  color:var(--teal-dark);
+  margin-bottom:1.5rem;
+}
+
+/* ===========================
+   THERAPIST (施術者紹介)
+   =========================== */
+.therapist{
+  padding:100px 0;
+  background:var(--off-white);
+}
+.therapist-inner{
+  max-width:700px;
+  margin:0 auto;
+  text-align:center;
+}
+.therapist-avatar{
+  width:100px;height:100px;
+  background:var(--teal-light);
+  border-radius:50%;
+  margin:0 auto 1.5rem;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2.5rem;
+  color:var(--teal);
+  border:3px solid var(--teal);
+}
+.therapist-name{
+  font-family:var(--font-accent);
+  font-size:1.2rem;
+  font-weight:700;
+  color:var(--black);
+  margin-bottom:.3rem;
+}
+.therapist-title{
+  font-size:.8rem;
+  color:var(--gray-500);
+  letter-spacing:.1em;
+  margin-bottom:1.5rem;
+}
+.therapist-text{
+  font-size:.9rem;
+  color:var(--gray-700);
+  line-height:2;
+  text-align:left;
+  background:var(--white);
+  padding:2rem;
+  border-radius:6px;
+  border:1px solid var(--gray-200);
+}
+.therapist-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  background:var(--teal);
+  color:var(--white);
+  font-size:.75rem;
+  font-weight:500;
+  padding:.4rem 1rem;
+  border-radius:20px;
+  margin-top:1.5rem;
+}
+
+/* ===========================
+   FAQ
+   =========================== */
+.faq{
+  padding:100px 0;
+  background:var(--white);
+}
+.faq-list{
+  max-width:700px;
+  margin:2rem auto 0;
+}
+.faq-item{
+  border-bottom:1px solid var(--gray-200);
+  padding:1.5rem 0;
+}
+.faq-item:first-child{
+  border-top:1px solid var(--gray-200);
+}
+.faq-q{
+  font-family:var(--font-accent);
+  font-size:.95rem;
+  font-weight:700;
+  color:var(--black);
+  cursor:pointer;
+  display:flex;
+  align-items:flex-start;
+  gap:.8rem;
+  transition:color .22s var(--ease);
+}
+.faq-q:hover{
+  color:var(--teal);
+  transition-duration:.48s;
+}
+.faq-q-label{
+  flex-shrink:0;
+  color:var(--teal);
+  font-weight:700;
+  font-size:1rem;
+}
+.faq-a{
+  margin-top:1rem;
+  padding-left:1.8rem;
+  font-size:.88rem;
+  color:var(--gray-700);
+  line-height:1.9;
+}
+
+/* ===========================
+   ACCESS MAP
+   =========================== */
+.access-map{
+  margin-top:2rem;
+  border-radius:6px;
+  overflow:hidden;
+  border:1px solid var(--gray-200);
+}
+.access-map iframe{
+  display:block;
+  width:100%;
+  height:300px;
+  border:0;
+}
+
+/* ===========================
+   FLOATING CTA (Mobile)
+   =========================== */
+.floating-cta{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  z-index:99;
+  background:rgba(255,255,255,.95);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+  padding:10px 16px;
+  border-top:1px solid var(--gray-200);
+  display:none;
+  text-align:center;
+  transform:translateY(100%);
+  transition:transform .3s var(--ease);
+}
+.floating-cta.show{
+  transform:translateY(0);
+}
+.floating-cta .cta-btn{
+  width:100%;
+  justify-content:center;
+  font-size:.9rem;
+  padding:.9rem 1.5rem;
+}
+@media(max-width:767px){
+  .floating-cta{display:block}
+}
+
+/* ===========================
    LINK COLOR OVERRIDE
    デフォルト青リンク禁止
    =========================== */
@@ -657,8 +949,11 @@ a:link,a:visited{color:inherit}
   .container{padding:0 16px}
   .hero{min-height:90vh;padding:80px 16px 40px}
   .hero-catch{font-size:1.6rem}
-  .concept,.treatment,.voice,.access{padding:70px 0}
-  .cta-section{padding:60px 0}
+  .concept,.treatment,.voice,.access,.trouble,.flow,.therapist,.faq{padding:70px 0}
+  .cta-section,.mid-cta{padding:60px 0}
+  .mid-cta{padding:40px 0}
+  /* フローティングCTA分の余白 */
+  .footer{padding-bottom:80px}
 }
 </style>
 </head>
@@ -700,6 +995,41 @@ a:link,a:visited{color:inherit}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
       Instagram<span class="sm">で</span>予約・お問い合わせ
     </a>
+  </div>
+</section>
+
+<!-- ========================
+     TROUBLE (共感セクション)
+     ======================== -->
+<section class="trouble" id="trouble">
+  <div class="container">
+    <p class="section-label fade-in">Trouble</p>
+    <h2 class="section-title fade-in">こんな<span class="sm">お</span>悩み、<br>ありませんか？</h2>
+    <div class="trouble-list">
+      <div class="trouble-item fade-in">
+        <span class="trouble-item-icon" aria-hidden="true">&#x1F614;</span>
+        肩こり<span class="sm">や</span>腰痛<span class="sm">が</span>慢性化して、もう治らない<span class="sm">と</span>諦めている
+      </div>
+      <div class="trouble-item fade-in">
+        <span class="trouble-item-icon" aria-hidden="true">&#x1F3C3;</span>
+        スポーツ後<span class="sm">の</span>痛み<span class="sm">や</span>違和感<span class="sm">が</span>なかなか取れない
+      </div>
+      <div class="trouble-item fade-in">
+        <span class="trouble-item-icon" aria-hidden="true">&#x1F915;</span>
+        頭痛・めまい<span class="sm">が</span>繰り返し起きて、日常生活<span class="sm">に</span>支障<span class="sm">が</span>ある
+      </div>
+      <div class="trouble-item fade-in">
+        <span class="trouble-item-icon" aria-hidden="true">&#x2728;</span>
+        フェイスライン<span class="sm">の</span>たるみ<span class="sm">や</span>くすみ<span class="sm">が</span>気になってきた
+      </div>
+      <div class="trouble-item fade-in">
+        <span class="trouble-item-icon" aria-hidden="true">&#x1F625;</span>
+        どこ<span class="sm">に</span>行っても良くならなかった
+      </div>
+    </div>
+    <p class="trouble-resolve fade-in">
+      その<span class="sm">お</span>悩み、<br>後藤鍼灸整骨院<span class="sm">に</span>ご相談ください。
+    </p>
   </div>
 </section>
 
@@ -806,6 +1136,69 @@ a:link,a:visited{color:inherit}
 </section>
 
 <!-- ========================
+     FLOW (施術の流れ)
+     ======================== -->
+<section class="flow" id="flow">
+  <div class="container">
+    <p class="section-label fade-in">Flow</p>
+    <h2 class="section-title fade-in">施術<span class="sm">の</span>流れ</h2>
+    <div class="flow-steps">
+
+      <div class="flow-step fade-in">
+        <span class="flow-step-num">1</span>
+        <h3 class="flow-step-title">ご予約</h3>
+        <p class="flow-step-text">
+          Instagram DM<span class="sm">または</span>お電話<span class="sm">にて</span>ご予約ください。ご希望<span class="sm">の</span>日時<span class="sm">を</span>お伝えいただければ調整いたします。
+        </p>
+      </div>
+
+      <div class="flow-step fade-in">
+        <span class="flow-step-num">2</span>
+        <h3 class="flow-step-title">カウンセリング</h3>
+        <p class="flow-step-text">
+          お身体<span class="sm">の</span>状態<span class="sm">や</span>お悩み<span class="sm">を</span>丁寧<span class="sm">に</span>伺います。初めて<span class="sm">の</span>方<span class="sm">も</span>安心してお話しください。
+        </p>
+      </div>
+
+      <div class="flow-step fade-in">
+        <span class="flow-step-num">3</span>
+        <h3 class="flow-step-title">施術</h3>
+        <p class="flow-step-text">
+          お一人おひとり<span class="sm">に</span>合わせたオーダーメイド施術。症状<span class="sm">の</span>根本原因<span class="sm">に</span>アプローチします。
+        </p>
+      </div>
+
+      <div class="flow-step fade-in">
+        <span class="flow-step-num">4</span>
+        <h3 class="flow-step-title">アフターケア</h3>
+        <p class="flow-step-text">
+          施術後<span class="sm">の</span>状態説明<span class="sm">と</span>セルフケア<span class="sm">の</span>アドバイス。次回<span class="sm">の</span>施術プラン<span class="sm">も</span>ご提案します。
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     MID CTA (メニュー後)
+     ======================== -->
+<section class="mid-cta">
+  <div class="container">
+    <p class="mid-cta-text fade-in">
+      施術内容<span class="sm">や</span>料金<span class="sm">に</span>ついて、まずは<span class="sm">お</span>気軽<span class="sm">に</span>ご相談ください。
+    </p>
+    <p class="mid-cta-urgency fade-in">
+      予約優先制<span class="sm">の</span>ため、お早め<span class="sm">の</span>ご連絡<span class="sm">を</span>おすすめします。
+    </p>
+    <a href="https://www.instagram.com/treat_gotosime/" target="_blank" rel="noopener noreferrer" class="cta-btn fade-in" aria-label="Instagramで予約・お問い合わせ">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram<span class="sm">で</span>相談する
+    </a>
+  </div>
+</section>
+
+<!-- ========================
      VOICE
      ======================== -->
 <section class="voice" id="voice">
@@ -848,6 +1241,129 @@ a:link,a:visited{color:inherit}
           毎回最適<span class="sm">な</span>施術<span class="sm">を</span>してくださいます。
         </p>
         <p class="voice-card-attr">50代男性 / 腰痛</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     MID CTA (Voice後)
+     ======================== -->
+<section class="mid-cta">
+  <div class="container">
+    <p class="mid-cta-text fade-in">
+      多くの方<span class="sm">が</span>痛み<span class="sm">や</span>お悩み<span class="sm">から</span>解放されています。<br>
+      あなた<span class="sm">も</span>、その一歩<span class="sm">を</span>踏み出しませんか？
+    </p>
+    <p class="mid-cta-urgency fade-in">
+      「もっと早く来ればよかった」<span class="sm">と</span>いう声<span class="sm">を</span>たくさんいただいています。
+    </p>
+    <a href="https://www.instagram.com/treat_gotosime/" target="_blank" rel="noopener noreferrer" class="cta-btn fade-in" aria-label="Instagramで予約・お問い合わせ">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      今すぐ予約<span class="sm">する</span>
+    </a>
+  </div>
+</section>
+
+<!-- ========================
+     THERAPIST (施術者紹介)
+     ======================== -->
+<section class="therapist" id="therapist">
+  <div class="container">
+    <p class="section-label fade-in">Therapist</p>
+    <h2 class="section-title fade-in">施術者紹介</h2>
+    <div class="therapist-inner fade-in">
+      <div class="therapist-avatar" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="48" height="48"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      </div>
+      <p class="therapist-name">院長 後藤</p>
+      <p class="therapist-title">後藤鍼灸整骨院 志免治療院</p>
+      <div class="therapist-text">
+        <p>
+          当院<span class="sm">は</span>「痛み<span class="sm">を</span>取る」だけでなく、「痛み<span class="sm">が</span>出ない身体づくり」<span class="sm">を</span>目指しています。
+        </p>
+        <p style="margin-top:1rem">
+          これまで多くのアスリート<span class="sm">の</span>身体<span class="sm">を</span>診てきた経験<span class="sm">を</span>活かし、
+          お一人おひとり<span class="sm">の</span>症状<span class="sm">に</span>合わせた施術<span class="sm">を</span>行っています。
+          身体<span class="sm">の</span>不調<span class="sm">や</span>美容<span class="sm">の</span>お悩み、何でもお気軽<span class="sm">に</span>ご相談ください。
+        </p>
+      </div>
+      <span class="therapist-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><polyline points="20 6 9 17 4 12"/></svg>
+        有名アスリート<span class="sm">も</span>信頼<span class="sm">する</span>施術力
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- ========================
+     FAQ
+     ======================== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <p class="section-label fade-in">FAQ</p>
+    <h2 class="section-title fade-in">よくある<span class="sm">ご</span>質問</h2>
+    <div class="faq-list">
+
+      <div class="faq-item fade-in">
+        <p class="faq-q">
+          <span class="faq-q-label">Q.</span>
+          初めてでも大丈夫ですか？
+        </p>
+        <p class="faq-a">
+          はい、もちろんです。初めて<span class="sm">の</span>方<span class="sm">に</span><span class="sm">は</span>丁寧<span class="sm">な</span>カウンセリング<span class="sm">を</span>行い、症状<span class="sm">や</span>ご希望<span class="sm">を</span>しっかり伺ってから施術<span class="sm">に</span>入ります。不安<span class="sm">な</span>こと<span class="sm">は</span>何でもお聞きください。
+        </p>
+      </div>
+
+      <div class="faq-item fade-in">
+        <p class="faq-q">
+          <span class="faq-q-label">Q.</span>
+          鍼<span class="sm">は</span>痛いですか？
+        </p>
+        <p class="faq-a">
+          鍼治療<span class="sm">で</span>使用する鍼<span class="sm">は</span>髪<span class="sm">の</span>毛ほど<span class="sm">の</span>細さです。チクッとする程度<span class="sm">で</span>、ほとんど<span class="sm">の</span>方<span class="sm">が</span>リラックスして受けていただけます。痛み<span class="sm">に</span>敏感<span class="sm">な</span>方<span class="sm">も</span>調整しますので、ご安心ください。
+        </p>
+      </div>
+
+      <div class="faq-item fade-in">
+        <p class="faq-q">
+          <span class="faq-q-label">Q.</span>
+          保険<span class="sm">は</span>使えますか？
+        </p>
+        <p class="faq-a">
+          症状<span class="sm">に</span>よって健康保険<span class="sm">が</span>適用<span class="sm">できる</span>場合<span class="sm">が</span>あります。詳しくはお問い合わせ時<span class="sm">に</span>ご相談ください。
+        </p>
+      </div>
+
+      <div class="faq-item fade-in">
+        <p class="faq-q">
+          <span class="faq-q-label">Q.</span>
+          美容鍼灸とは何ですか？
+        </p>
+        <p class="faq-a">
+          お顔<span class="sm">の</span>ツボ<span class="sm">に</span>鍼<span class="sm">を</span>打つこと<span class="sm">で</span>、血行促進・コラーゲン生成<span class="sm">を</span>促し、リフトアップ・小顔・肌質改善<span class="sm">を</span>目指す施術です。薬剤<span class="sm">を</span>使わず、自然<span class="sm">な</span>美しさ<span class="sm">を</span>引き出します。
+        </p>
+      </div>
+
+      <div class="faq-item fade-in">
+        <p class="faq-q">
+          <span class="faq-q-label">Q.</span>
+          どんな服装<span class="sm">で</span>行けばいいですか？
+        </p>
+        <p class="faq-a">
+          動きやすい服装<span class="sm">が</span>おすすめですが、お着替え<span class="sm">も</span>ご用意しています。お仕事帰り<span class="sm">で</span>もそのままお越しいただけます。
+        </p>
+      </div>
+
+      <div class="faq-item fade-in">
+        <p class="faq-q">
+          <span class="faq-q-label">Q.</span>
+          予約なし<span class="sm">でも</span>受けられますか？
+        </p>
+        <p class="faq-a">
+          予約優先制<span class="sm">の</span>ため、事前予約<span class="sm">を</span>おすすめしています。当日<span class="sm">で</span>も空き<span class="sm">が</span>あれば対応可能ですので、まずはお気軽<span class="sm">に</span>ご連絡ください。
+        </p>
       </div>
 
     </div>
@@ -898,6 +1414,9 @@ a:link,a:visited{color:inherit}
       </div>
 
     </div>
+    <div class="access-map fade-in">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13281.04!2d130.49!3d33.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3541919c1f5e8b5f%3A0x1!2z5b-X5YWN55S6!5e0!3m2!1sja!2sjp!4v1" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="後藤鍼灸整骨院 志免治療院の地図"></iframe>
+    </div>
   </div>
 </section>
 
@@ -911,6 +1430,9 @@ a:link,a:visited{color:inherit}
     <p class="cta-lead fade-in">
       施術内容<span class="sm">の</span>ご質問・ご予約<span class="sm">は</span><br>
       Instagram DM<span class="sm">から</span>承っております。
+    </p>
+    <p class="cta-lead fade-in" style="font-weight:700;color:rgba(255,255,255,.95);font-size:.85rem;margin-bottom:2rem">
+      予約優先制<span class="sm">の</span>ため、枠<span class="sm">が</span>埋まる前<span class="sm">に</span>お早め<span class="sm">に</span>ご連絡ください。
     </p>
     <a href="https://www.instagram.com/treat_gotosime/" target="_blank" rel="noopener noreferrer" class="cta-btn fade-in" aria-label="Instagramで予約・お問い合わせ">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -931,6 +1453,16 @@ a:link,a:visited{color:inherit}
 </footer>
 
 <!-- ========================
+     FLOATING CTA (Mobile)
+     ======================== -->
+<div class="floating-cta" id="floatingCta">
+  <a href="https://www.instagram.com/treat_gotosime/" target="_blank" rel="noopener noreferrer" class="cta-btn" aria-label="Instagramで予約・お問い合わせ">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    Instagram<span class="sm">で</span>予約する
+  </a>
+</div>
+
+<!-- ========================
      SCRIPTS
      ======================== -->
 <script>
@@ -945,6 +1477,16 @@ window.addEventListener('scroll', () => {
     header.classList.remove('scrolled');
   }
   lastScroll = y;
+}, { passive: true });
+
+// Floating CTA show/hide
+const floatingCta = document.getElementById('floatingCta');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 600) {
+    floatingCta.classList.add('show');
+  } else {
+    floatingCta.classList.remove('show');
+  }
 }, { passive: true });
 
 // Intersection Observer for fade-in
